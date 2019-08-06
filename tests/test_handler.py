@@ -9,7 +9,7 @@ class TestHandlerCase(unittest.TestCase):
         result = index.handler(None, None)
         print(result)
         self.assertEqual(result['statusCode'], 200)
-        self.assertEqual(result['headers']['Content-Type'], 'text/html')
+        self.assertEqual(result['headers']['content-type'], 'text/html')
 
 
 if __name__ == '__main__':
