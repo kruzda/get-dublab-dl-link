@@ -2,7 +2,7 @@ from botocore.vendored import requests
 
 DUBLAB_API_EP = "https://api-1.dublab.com/wp-json/lazystate/v1"
 
-def lambda_handler(event, context):
+def handler(event, context):
     path = str(event['path'])
     r = requests.get(''.join([DUBLAB_API_EP, path]))
     link = r.json()[path]['audio']['url']
