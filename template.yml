@@ -24,7 +24,7 @@ Globals:
       Role: !Ref CodeDeployRole
 
 Resources:
-  HelloWorld:
+  DublabGetLink:
     Type: AWS::Serverless::Function
     Properties:
       Handler: index.handler
@@ -34,16 +34,11 @@ Resources:
         - LambdaExecutionRole
         - Arn
       Events:
-        GetEvent:
+        ProxyApiGreedy:
           Type: Api
           Properties:
-            Path: /
+            Path: /{proxy+}
             Method: get
-        PostEvent:
-          Type: Api
-          Properties:
-            Path: /
-            Method: post
   LambdaExecutionRole:
     Description: Creating service role in IAM for AWS Lambda
     Type: AWS::IAM::Role
